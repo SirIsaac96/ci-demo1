@@ -1,7 +1,6 @@
 name: CI demo
 
-on: 
-  push:
+on: push
 
 jobs: 
     lint:

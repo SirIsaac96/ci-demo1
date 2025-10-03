@@ -1,7 +1,7 @@
 name: CI demo
 
-on: push
-
+on: 
+  push:
 
 jobs: 
     lint:
@@ -13,6 +13,8 @@ jobs:
 
           - name: Setup python
             uses: actions/setup-python@v4
+            with:
+              python-version: '3.13.7'
 
           - name: Install dependencies
             run: |

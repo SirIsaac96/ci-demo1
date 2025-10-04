@@ -33,7 +33,8 @@ jobs:
             run: |
               flake8 example.py
 
-    unit_test: 
+    unit_test:
+        needs: lint
         runs-on: obuntu-latest
 
         steps:

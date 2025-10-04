@@ -8,7 +8,6 @@ on:
 
 jobs: 
     lint:
-
         runs-on: ${{matrix.os}}
 
         strategy:
@@ -33,18 +32,19 @@ jobs:
           - name: Run flake8
             run: |
               flake8 example.py
+
     unit_test: 
-      runs-on: obuntu-latest
+        runs-on: obuntu-latest
 
-    steps:
-      - name: code checkout
-        uses: actions/checkout@v3
+        steps:
+          - name: code checkout
+            uses: actions/checkout@v3
 
-      - name: python code
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.13.7'
-          
-      - name: run unit test
-        run: |
-          python -m unittest discover
+          - name: python code
+            uses: actions/setup-python@v2
+            with:
+              python-version: '3.13.7'
+              
+          - name: run unit test
+            run: |
+              python -m unittest discover
